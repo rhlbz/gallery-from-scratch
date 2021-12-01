@@ -19,7 +19,7 @@ export default {
       'https://images.pexels.com/photos/10323136/pexels-photo-10323136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       'https://images.pexels.com/photos/8356326/pexels-photo-8356326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      "https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -43,8 +43,8 @@ export default {
   margin: 0% 1%;
 }
 h1.title{
-  margin-block-start: 0.1em;
-  margin-block-end: 0.1em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 .title {
   padding-left: 2.5%;

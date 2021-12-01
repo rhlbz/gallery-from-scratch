@@ -19,13 +19,12 @@
   <div class="preview">
     <div class="preview--content">
       <gallery-preview
-        v-for="(image, idx) in previews"
+        v-for="(image, idx) in images"
         :image="image"
         :key="`item-preview-${idx}`"
         :current="current"
         :isCurrent="idx === current ? true : false"
         :idx="idx"
-        :totalImages="images.length-1"
         @click="changeCurrency(idx)"
       ></gallery-preview>
     </div>
@@ -36,69 +35,71 @@
 import GalleryItem from './GalleryItem.vue';
 import GalleryControls from './GalleryControls.vue';
 import GalleryPreview from './GalleryPreview.vue';
+
 export default {
+
   components: { GalleryItem, GalleryControls, GalleryPreview },
+
   props: ['images'],
 
   data: () => ({
-      current: 0,
-      previews: [],
+    current: 0,
   }),
+
   methods: {
-      setCurrent(idx){
-          this.current = idx;
-      },
-      setPreviewIdx(idx){
-        this.previewIdx = idx;
-      },
-      changeCurrency(idx){
-        this.setCurrent(idx)
-      },
-      next(){
-          const next = this.current < this.images.length - 1 ? this.current + 1 : 0
-          this.setCurrent( next );
-      },
-      prev(){
-          const previous = this.current > 0 ? this.current - 1 : this.images.length - 1
-          this.setCurrent( previous );
-      },
-      initPreviews(){
-        this.previews = [...this.images];
-      },
-      setPreviews(previews){
-        this.previews = previews;
-      },
-
-  },
-  mounted() {
-    this.initPreviews();
+    setCurrent(idx){
+      this.current = idx;
+    },
+    changeCurrency(idx){
+      this.setCurrent(idx)
+    },
+    next(){
+      const next = this.current < this.images.length - 1 ? this.current + 1 : 0
+      this.setCurrent( next );
+    },
+    prev(){
+      const previous = this.current > 0 ? this.current - 1 : this.images.length - 1
+      this.setCurrent( previous );
+    }
   },
 
+  mounted(){
+    const _this = this;
+    window.addEventListener('keyup', function(event){
+      const key = event.code;
+      if ( key === 'KeyA' || key === 'ArrowLeft' || key === 'NumpadSubtract' || key === 'Slash' ) {
+        _this.prev();
+      } else if ( key === 'KeyD' || key === 'ArrowRight' || key === 'NumpadAdd' || key === 'BracketRight' ){
+        _this.next();
+      }
+    });
+  }
 };
 </script>
 <style>
-*{
+* {
   overflow:hidden!important;
 }
 .gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 .gallery--content {
-    position: relative;
-    max-width: 150vw;
-    max-height: 30vw;
-    overflow: hidden;
+  position: relative;
+  max-width: 150vw;
+  max-height: 30vw;
+  overflow: hidden;
 }
 .divider{
-  border-color: rgba(0, 201, 200, 0.5);
-  background-color: rgba(0, 201, 200, 0.5);
-  color: rgba(0, 201, 200, 0.5);
+  background-color: #00C9C8;
+  color: #00C9C8;
   width: 70%;
+  border:none;
+  height: 1px;
 }
 
 @keyframes scroll {
@@ -114,14 +115,11 @@ export default {
 	overflow:hidden;
 	position: relative;
 	width: 960px;
-	
 }
 .preview::after,
 .preview::before{
   content: "";
-  height: 100px;
   position: absolute;
-  width: 200px;
   z-index: 2;
 }
 .preview::after{

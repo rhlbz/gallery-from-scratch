@@ -1,16 +1,17 @@
 <template>
     <div 
-        :class="forPreview ? 'preview--controls--content' : 'controls--content' ">
+        class='controls--content'
+    >
         <button 
             id="prev" 
-            :class="forPreview ? 'control prev-control preview-controls' : 'control prev-control gallery-controls'" 
+            class='control prev-control gallery-controls'
             @click="$emit('prev')"
         >
             &#x2039;
         </button>
         <button 
             id="next" 
-            :class="forPreview ? 'control next-control preview-controls' : 'control next-control gallery-controls'"
+            class='control next-control gallery-controls'
             @click="$emit('next')"
         >
             &#x203A;
@@ -47,7 +48,7 @@
     position: absolute;
     color: white;
     border: none;
-    transition: background 0.8s ease, color 0.8s ease;
+    transition: background 0.8s linear, color 0.8s linear;
 }
 .control.gallery-controls:hover{
     cursor: pointer;
@@ -68,7 +69,7 @@
     position: absolute;
     color: white;
     border: none;
-    transition: background 0.8s ease, color 0.8s ease;
+    transition: background 0.8s linear, color 0.8s linear;
 }
 .control.preview-controls:hover{
     cursor: pointer;

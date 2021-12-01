@@ -16,7 +16,7 @@ export default {
   props: ['image', 'idx', 'current', 'isCurrent', 'totalImages'],
   methods: {
     changeCurrency(idx) {       
-    this.$emit('clicked', idx)         
+        this.$emit('clicked', idx)         
     }
   },
 };
@@ -33,7 +33,7 @@ export default {
     width: 100px;
     height: 50px;
     filter: grayscale(100%);
-    transition: filter 0.2s ease, transform 0.2s ease;
+    transition: filter 0.2s linear, transform 0.2s linear;
 }
 .img-preview:hover{
     cursor: pointer;
