@@ -77,6 +77,9 @@ export default {
 };
 </script>
 <style>
+*{
+  overflow:hidden!important;
+}
 .gallery {
     display: flex;
     flex-direction: row;

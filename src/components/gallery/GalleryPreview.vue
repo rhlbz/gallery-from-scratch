@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style>
+*{
+    overflow:hidden!important;
+}
 .gallery-item-preview{
     margin: 12.5px;
 }

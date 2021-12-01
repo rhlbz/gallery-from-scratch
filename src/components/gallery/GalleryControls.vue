@@ -25,6 +25,9 @@
     }
 </script>
 <style>
+*{
+  overflow:hidden!important;
+}
 .preview--controls--content{    
     position: relative;
 }

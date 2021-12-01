@@ -15,7 +15,9 @@ export default {
 </script>
 
 <style>
-
+*{
+  overflow:hidden!important;
+}
 img {
     width: 100%;
     height: 100%;
