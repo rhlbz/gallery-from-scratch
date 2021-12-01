@@ -48,7 +48,7 @@
     position: absolute;
     color: white;
     border: none;
-    transition: background 0.8s linear, color 0.8s linear;
+    transition: background 0.4s linear, color 0.4s linear;
 }
 .control.gallery-controls:hover{
     cursor: pointer;

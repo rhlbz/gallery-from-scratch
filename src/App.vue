@@ -13,21 +13,67 @@ export default {
   components: { Gallery },
   data: () => ({
     images: [
-      'https://images.pexels.com/photos/311458/pexels-photo-311458.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      'https://images.pexels.com/photos/8356485/pexels-photo-8356485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-      'https://images.pexels.com/photos/7263343/pexels-photo-7263343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      'https://images.pexels.com/photos/10323136/pexels-photo-10323136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      'https://images.pexels.com/photos/8356326/pexels-photo-8356326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      "https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/3064079/pexels-photo-3064079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/3509971/pexels-photo-3509971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/4072840/pexels-photo-4072840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      {
+        id: 0,
+        path: 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        author: 'Jaime Reimer'
+      }, {
+        id: 1,
+        path: 'https://images.pexels.com/photos/2693529/pexels-photo-2693529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        author: 'Aarti Vijay',
+      }, {
+        id: 2,
+        path: 'https://images.pexels.com/photos/7587337/pexels-photo-7587337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        author: 'Polina Kovaleva',
+      }, {
+        id: 3,
+        path: 'https://images.pexels.com/photos/311458/pexels-photo-311458.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        author: 'Scott Webb'
+      }, {
+        id: 4,
+        path: 'https://images.pexels.com/photos/7604425/pexels-photo-7604425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        author: 'Hazel Marie',
+      }, {
+        id: 5,
+        path: 'https://images.pexels.com/photos/3484061/pexels-photo-3484061.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        author: 'Andy Vu'
+      }, {
+        id: 6,
+        path: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',        
+        author: 'Ezra  Comeau'
+      }, {
+        id: 7,
+        path: "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        author: 'eberhard grossgasteiger'
+      }, {
+        id: 8,
+        path: "https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        author: 'Jakub Novacek'
+      }, {
+        id: 9,
+        path: "https://images.pexels.com/photos/8356485/pexels-photo-8356485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        author: 'Mikhail Nilov'
+      }, {
+        id: 10,
+        path: "https://images.pexels.com/photos/8356326/pexels-photo-8356326.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        author: 'Mikhail Nilov'        
+      }, {
+        id: 11,
+        path: "https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        author: 'eberhard grossgasteiger'
+      }, {
+        id: 12,
+        path: "https://images.pexels.com/photos/7263343/pexels-photo-7263343.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        author: 'Rachel Claire'
+      }, {
+        id: 13,
+        path: "https://images.pexels.com/photos/853199/pexels-photo-853199.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        author: 'Artem Beliaikin'
+      }, {
+        id: 14,
+        path: "https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        author: 'Sagui Andrea'
+      }
     ],
   }),
 };

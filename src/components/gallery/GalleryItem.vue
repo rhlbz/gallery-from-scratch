@@ -61,7 +61,6 @@ img {
 }
 .gallery-item > img:hover {
     cursor: zoom-in;
-    transform: scale(1.2)
 }
 .none{
     display: none;

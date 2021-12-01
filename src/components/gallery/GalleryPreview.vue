@@ -30,14 +30,13 @@ export default {
     margin: 12.5px;
 }
 .img-preview {
-    width: 100px;
-    height: 50px;
-    filter: grayscale(100%);
+    width: 150px;
+    height: 100px;
     transition: filter 0.2s linear, transform 0.2s linear;
 }
 .img-preview:hover{
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.1);
     filter: grayscale(0%);
 }
 .img-preview:hover > .preview-current{

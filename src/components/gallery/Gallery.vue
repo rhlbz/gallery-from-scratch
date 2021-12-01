@@ -3,7 +3,7 @@
     <div class="gallery--content">
       <gallery-item
         v-for="(image, idx) in images"
-        :image="image"
+        :image="image.path"
         :key="`item-${idx}`"
         :current="current"
         :idx="idx"
@@ -20,7 +20,7 @@
     <div class="preview--content">
       <gallery-preview
         v-for="(image, idx) in images"
-        :image="image"
+        :image="image.path"
         :key="`item-preview-${idx}`"
         :current="current"
         :isCurrent="idx === current ? true : false"
@@ -108,9 +108,6 @@ export default {
 }
 .preview {
   background: white;
-  min-height: 100px;
-  height: 150px;
-  max-height: 150px;
 	margin: auto;
 	overflow:hidden;
 	position: relative;
@@ -132,7 +129,7 @@ export default {
 	top: 0;
 }
 .preview--content {
-  animation: scroll 40s linear infinite;
+  animation: scroll 60s linear infinite;
   display: flex;
   width: calc(250px * 14);
 }
