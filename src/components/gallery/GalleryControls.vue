@@ -1,25 +1,38 @@
 <template>
-    <button id="prev" class="control prev-control" @click="$emit('prev')">
-        &#x2039;
-    </button>
-    <button id="next" class="control next-control" @click="$emit('next')">
-        &#x203A;
-    </button>
+    <div 
+        :class="forPreview ? 'preview--controls--content' : 'controls--content' ">
+        <button 
+            id="prev" 
+            :class="forPreview ? 'control prev-control preview-controls' : 'control prev-control gallery-controls'" 
+            @click="$emit('prev')"
+        >
+            &#x2039;
+        </button>
+        <button 
+            id="next" 
+            :class="forPreview ? 'control next-control preview-controls' : 'control next-control gallery-controls'"
+            @click="$emit('next')"
+        >
+            &#x203A;
+        </button>
+    </div>
 </template>
 
 <script>
     export default {
+        props: ['forPreview'],
         emits: ['prev', 'next']
     }
 </script>
 <style>
-.control{
-    background: rgba(50, 75, 74, .5);
-    border: none;
-    display: flex;
+.preview--controls--content{    
+    position: relative;
+}
+.control.gallery-controls{
+    background: rgba(50, 75, 74, .7);
     display: flex;
     z-index: 2;
-    top: 0%;
+    top: 45%;
     width: 7.5%;
     font-size: 2em;
     flex-direction: row;
@@ -27,26 +40,43 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 10%;
     position: absolute;
-    font-size: 2em;
-    color: #00C9C8;
+    color: white;
     border: none;
     transition: background 0.8s ease, color 0.8s ease;
 }
-.control:hover{
+.control.gallery-controls:hover{
     cursor: pointer;
     color: #003A3D;
-    background: rgba(0, 201, 200, .5);
+    background: rgba(0, 201, 200, .7);
 }
-.next-control{
-    float: right;
+.control.preview-controls{
+    background: rgba(50, 75, 74, .7);
+    display: flex;
+    z-index: 2;
+    width: 2%;
+    font-size: 1.5em;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+    border: none;
+    transition: background 0.8s ease, color 0.8s ease;
+}
+.control.preview-controls:hover{
+    cursor: pointer;
+    color: #003A3D;
+    background: rgba(0, 201, 200, .7);
+}
+.next-control.gallery-controls{
     left: 92.5%;
 }
-.control--hided{
-    visibility: hidden;
+.next-control.preview-controls {
+    left: 67%;
 }
-.control--showed{
-    visibility: visible;
-}
+
 </style>
