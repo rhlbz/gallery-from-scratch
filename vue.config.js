@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/gallery-from-scratch/'
+  publicPath: '/gallery-from-scratch/public/'
 }
