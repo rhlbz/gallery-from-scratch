@@ -2,6 +2,7 @@
   "name": "gallery-from-scratch",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://https://rhlbz.github.io/gallery-from-scratch/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
