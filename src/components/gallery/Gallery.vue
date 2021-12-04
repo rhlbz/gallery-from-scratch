@@ -3,7 +3,7 @@
     <div class="gallery--content">
       <gallery-item
         v-for="(image, idx) in images"
-        :image="image.path"
+        :image="image"
         :key="`item-${idx}`"
         :current="current"
         :idx="idx"
@@ -40,11 +40,17 @@ export default {
 
   components: { GalleryItem, GalleryControls, GalleryPreview },
 
-  props: ['images'],
+  props: ['images', 'selected' ],
 
   data: () => ({
-    current: 0,
+    current: null
   }),
+
+  watch: {
+    selected: function (val) {
+      this.setCurrent(parseInt(val));
+    }
+  },
 
   methods: {
     setCurrent(idx){
@@ -62,7 +68,6 @@ export default {
       this.setCurrent( previous );
     }
   },
-
   mounted(){
     const _this = this;
     window.addEventListener('keyup', function(event){
@@ -77,7 +82,7 @@ export default {
 };
 </script>
 <style>
-* {
+.gallery {
   overflow:hidden!important;
 }
 .gallery {

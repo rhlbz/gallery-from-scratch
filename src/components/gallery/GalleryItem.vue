@@ -1,7 +1,9 @@
 <template>
-    <div class="gallery-item" v-show="current === idx">
+    <div 
+        :class="isCurrent ? 'gallery-item' : 'none'"
+    >
         <img 
-            :src="image" 
+            :src="image.path" 
             :idx="idx"
             :isCurrent="isCurrent"
             @click="zoomingIn(idx)"
@@ -17,7 +19,7 @@
             </button>
             <img 
                 :class="clickedImg === idx ? 'zoomed' : 'none'"
-                :src="image" 
+                :src="image.path" 
                 :idx="idx"
                 :isCurrent="isCurrent"
                 @click="zoomingOut()"
@@ -28,11 +30,21 @@
 
 <script>
 export default {
-  props: ['image', 'idx', 'current', 'isCurrent'],
+  props: ['image', 'idx', 'current'],
   data:() => ({
     clickedImg: null,
+    isCurrent: null,
   }),
+    watch: {
+        current: function (val) {
+            if ( val || val === 0 )
+                this.setIsCurrent( parseInt(val) === this.idx );
+        }
+  },
   methods: {
+    setIsCurrent(currency){
+        this.isCurrent = currency;
+    },
     setClickedImg(idx){
         this.clickedImg = idx;
     },
@@ -47,10 +59,8 @@ export default {
 </script>
 
 <style>
-* {
-  overflow:hidden!important;
-}
-img {
+
+.gallery-item > img {
     width: 100%;
     height: 100%;
     max-width: 150vw;
@@ -91,11 +101,11 @@ img.zoomed:hover{
     position: fixed;
     margin-left: 93.5%;
     font-size: 2em;
-    color: #00C9C8;
-    transition: color 0.8s lienar;
+    color: black;
+    transition: color 0.8s linear;
 }
 .closeZoom:hover{
-    color: white;
+    color: #00C9C8;
     cursor: pointer;
 }
 

@@ -26,9 +26,6 @@
     }
 </script>
 <style>
-*{
-  overflow:hidden!important;
-}
 .preview--controls--content{    
     position: relative;
 }
@@ -37,6 +34,24 @@
     display: flex;
     z-index: 2;
     top: 45%;
+    width: 7.5%;
+    font-size: 2em;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    position: absolute;
+    color: white;
+    border: none;
+    transition: background 0.4s linear, color 0.4s linear;
+}
+.control.info-control{
+    background: rgba(50, 75, 74, .7);
+    display: flex;
+    z-index: 2;
+    top: 92.5%;
     width: 7.5%;
     font-size: 2em;
     flex-direction: row;
