@@ -95,8 +95,6 @@ export default {
 }
 .gallery--content {
   position: relative;
-  max-width: 150vw;
-  max-height: 30vw;
   overflow: hidden;
 }
 .divider{
@@ -109,14 +107,15 @@ export default {
 
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7))}
+	100% { transform: translateX(calc(-150px * 7))}
 }
 .preview {
   background: white;
 	margin: auto;
 	overflow:hidden;
 	position: relative;
-	width: 960px;
+	min-width: 480px;
+	max-width: 960px;
 }
 .preview::after,
 .preview::before{
@@ -136,7 +135,7 @@ export default {
 .preview--content {
   animation: scroll 60s linear infinite;
   display: flex;
-  width: calc(250px * 14);
+  width: calc(150px * 14);
 }
 .preview--content > .gallery-item-preview {
   min-height: 100px;
@@ -146,5 +145,72 @@ export default {
 }
 
 
+@media screen and (min-width: 320px) and (max-width: 570px){
+  .gallery--content{
+    max-width: 200vw;
+    max-height: 50vw;
+  }
+  .gallery-item > img {
+    width: 100%;
+    height: 100%;
+    max-width: 200vw;
+    max-height: 50vw;
+  }
 
+  .divider, .preview {
+    display: none;    
+  }
+}
+@media screen and (min-width: 570px) and (max-width: 768px){
+  .gallery--content{
+    max-width: 150vw;
+    max-height: 70vw;
+  }
+  .gallery-item > img {
+    width: 100%;
+    height: 100%;
+    max-width: 200vw;
+    max-height: 70vw;
+  }
+
+  .divider, .preview {
+    display: none;    
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 980px){
+  .gallery--content{
+    max-width: 150vw;
+    max-height: 50vw;
+  }
+  .gallery-item > img {
+    width: 100%;
+    height: 100%;
+    max-width: 150vw;
+    max-height: 50vw;
+  }
+}
+@media screen and (min-width: 989px) and (max-width: 1224px){
+  .gallery-content{
+    max-width: 150vw;
+    max-height: 40vw;
+  }
+  .gallery-item > img {
+    width: 100%;
+    height: 100%;
+    max-width: 150vw;
+    max-height: 40vw;
+  }
+}
+@media screen and (min-width: 1224px) {
+  .gallery-content{
+    max-width: 150vw;
+    max-height: 32vw;
+  }
+  .gallery-item > img {
+    width: 100%;
+    height: 100%;
+    max-width: 150vw;
+    max-height: 32vw;
+  }
+}
 </style>

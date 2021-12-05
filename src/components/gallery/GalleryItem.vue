@@ -11,12 +11,6 @@
         <div 
             :class="clickedImg === idx ? 'zoomed-img open' : 'none'"
         >
-            <button
-                :class="clickedImg === idx ? 'closeZoom' : 'none'"
-                @click="zoomingOut()"
-            >
-                &#x2715;
-            </button>
             <img 
                 :class="clickedImg === idx ? 'zoomed' : 'none'"
                 :src="image.path" 
@@ -54,6 +48,15 @@ export default {
     zoomingOut(){
         this.setClickedImg(null);
     }
+  },
+   mounted(){
+    const _this = this;
+    window.addEventListener('keyup', function(event){
+      const key = event.code;
+      if ( key === 'Escape') {
+        _this.zoomingOut();
+      }
+    });
   }
 };
 </script>
@@ -82,15 +85,18 @@ export default {
     height: 100%;
     top: 0;
     left: 0;
+    display: flex;
     z-index: 3;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 img.zoomed{
-    width: 90%;
-    height: 90%;
-    max-width: 100vw;
-    max-height: 100vw;
-    margin: 2.5% 5%;
+    max-width: 90vmax;
+    max-height: 45vmax;
 }
 img.zoomed:hover{
     cursor: zoom-out;
