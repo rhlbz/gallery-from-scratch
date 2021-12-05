@@ -55,7 +55,16 @@
 .next-control.gallery-controls{
     left: 92.5%;
 }
-
+@media screen and (max-width: 320px) {
+    .control.gallery-controls{
+        top: 0;
+        height: 99.9%;
+        width: 5%;
+    }
+    .next-control.gallery-controls{
+        left: 95%;
+    }
+}
 @media screen and (min-width: 320px) and (max-width:  768px){
     .control.gallery-controls{
         top: 0;

@@ -144,7 +144,22 @@ export default {
   width: 150px;
 }
 
+@media screen and (max-width: 320px) {
+  .gallery--content{
+    max-width: 200vw;
+    max-height: 50vw;
+  }
+  .gallery-item > img {
+    width: 100%;
+    height: 100%;
+    max-width: 200vw;
+    max-height: 50vw;
+  }
 
+  .divider, .preview {
+    display: none;    
+  }
+}
 @media screen and (min-width: 320px) and (max-width: 570px){
   .gallery--content{
     max-width: 200vw;
