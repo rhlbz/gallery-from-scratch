@@ -52,7 +52,6 @@
     color: #003A3D;
     background: rgba(0, 201, 200, .7);
 }
-
 .next-control.gallery-controls{
     left: 92.5%;
 }
@@ -60,7 +59,7 @@
 @media screen and (min-width: 320px) and (max-width:  768px){
     .control.gallery-controls{
         top: 0;
-        height: 100%;
+        height: 99.9%;
         width: 5%;
     }
     .next-control.gallery-controls{
